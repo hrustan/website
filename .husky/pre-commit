@@ -1,0 +1,6 @@
+npm run prettier
+git add .
+# test stage when we have them
+# npm test
+npm run build
+npm run deploy

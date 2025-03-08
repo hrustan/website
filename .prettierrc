@@ -1,0 +1,11 @@
+{
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "jsonRecursiveSort": false,
+    "jsonSortOrder": "{\"*\": \"lexical\"}",
+    "plugins": ["prettier-plugin-sort-json"],
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5"
+}
