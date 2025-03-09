@@ -9,13 +9,14 @@ export const RotatingCube: Component = () => {
         `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}, 0.9)`
 
     // Maybe repurpose into some kind of cubeFace text rememberer?
-    // Can use memory router for cuteText links
+    // Can use memory router for cubeText links
     const [randomColor, setRandomColor] = createSignal(getRandomColor())
 
     // It'd be cool if after clicking on a link i.e. 'resume' it enlarged that particular face of the cube and went into a different view. We could use the solid router to control this behavior
 
-    const handleClick = (face: string): void => {
-        setRandomColor(getRandomColor())
+    const handleLinkClick = (face: string): void => {
+        // setRandomColor(getRandomColor())
+        console.log('hello!', face)
     }
 
     return (
@@ -25,7 +26,7 @@ export const RotatingCube: Component = () => {
                     <button
                         class={`${styles.face} ${styles[face]}`}
                         style={`background: ${getRandomColor()}`}
-                        onClick={() => handleClick(face)}
+                        onClick={() => handleLinkClick(cubeText[index()])}
                     >
                         {cubeText[index()]}
                     </button>

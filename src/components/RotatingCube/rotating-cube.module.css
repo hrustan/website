@@ -3,8 +3,8 @@
     height: 25vmin;
     position: relative;
     transform-style: preserve-3d;
-    animation: cube-spin infinite 20s linear;
-    animation-delay: 3s;
+    animation: cube-spin 2s linear 2s 1 forwards;
+    /* animation-delay: 2s; */
 }
 
 .face {
@@ -55,6 +55,6 @@
         transform: rotateX(0deg) rotateY(0deg);
     }
     to {
-        transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(0deg) rotateY(385deg);
     }
 }
