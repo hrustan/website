@@ -1,26 +1,35 @@
 import { createSignal, For, type Component } from 'solid-js'
-import { cubeText, faces } from '../constants/constants'
+import { colorPalette, cubeText, faces } from '../constants/constants'
 import styles from './rotating-cube.module.css'
 
-export const RotatingCube: Component = () => {
-    const getRandomNumber = (): number => Math.floor(Math.random() * 256)
+type RotatingCubeProps = {
+    rotation: {
+        x: number
+        y: number
+    }
+}
 
-    const getRandomColor = (): string =>
-        `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}, 0.9)`
+export const RotatingCube: Component<RotatingCubeProps> = (props) => {
+    const getRandomColor = (): string => {
+        const randomIndex = Math.floor(Math.random() * colorPalette.length)
+        return colorPalette[randomIndex]
+    }
 
     // Maybe repurpose into some kind of cubeFace text rememberer?
-    // Can use memory router for cubeText links
-    const [randomColor, setRandomColor] = createSignal(getRandomColor())
+    // Can use memory router for cubeText link
 
     // It'd be cool if after clicking on a link i.e. 'resume' it enlarged that particular face of the cube and went into a different view. We could use the solid router to control this behavior
 
     const handleLinkClick = (face: string): void => {
         // setRandomColor(getRandomColor())
-        console.log('hello!', face)
+        console.log(face)
     }
 
     return (
-        <div class={styles.cube}>
+        <div
+            class={styles.cube}
+            style={`transform: rotateX(${props.rotation.x}deg) rotateY(${props.rotation.y}deg);`}
+        >
             <For each={faces}>
                 {(face, index) => (
                     <button
