@@ -9,7 +9,7 @@
 }
 
 .header {
-    background-color: #282c34;
+    background-color: silver;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,10 +17,6 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-}
-
-.link {
-    color: #b318f0;
 }
 
 @keyframes logo-spin {

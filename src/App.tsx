@@ -1,14 +1,13 @@
 import type { Component } from 'solid-js'
 
-import logo from './logo.svg'
 import styles from './App.module.css'
+import { RotatingCube } from './components/RotatingCube/rotating-cube'
 
 const App: Component = () => {
     return (
         <div class={styles.App}>
             <header class={styles.header}>
-                <img src={logo} class={styles.logo} alt="logo" />
-                <p>
+                {/* <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
                 <a
@@ -18,7 +17,8 @@ const App: Component = () => {
                     rel="noopener noreferrer"
                 >
                     Learn Solid
-                </a>
+                </a> */}
+                <RotatingCube />
             </header>
         </div>
     )
