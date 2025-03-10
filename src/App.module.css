@@ -3,20 +3,10 @@
 
 .App {
     text-align: center;
-    touch-action: manipulation;
-    overflow: hidden;
-}
-
-.cubeBody {
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: silver;
+    background-color: whitesmoke;
 }
 
 .flatCubeBody {
-    min-height: 25vh;
-    background-color: gray;
+    min-height: 30vh;
+    background-color: purple;
 }

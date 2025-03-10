@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount, type Component } from 'solid-js'
+import { createEffect, createSignal, type Component } from 'solid-js'
 import { RotatingCube } from './components/RotatingCube/rotating-cube'
 import styles from './App.module.css'
 import { RotatingCubeWrapper } from './components/RotatingCubeWrapper/rotating-cube-wrapper'
@@ -9,6 +9,10 @@ const App: Component = () => {
     const handleRotationChange = (newRotation: { x: number; y: number }) => {
         setRotation(newRotation)
     }
+
+    createEffect(() => {
+        console.log(rotation())
+    })
 
     return (
         <div class={styles.App}>

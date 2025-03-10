@@ -6,6 +6,8 @@ import {
     type Component,
 } from 'solid-js'
 import styles from './rotating-cube-wrapper.module.css'
+import { HelperText } from '../HelperText/helper-text'
+import { helperText } from '../constants/constants'
 
 type RotatingCubeWrapperProps = {
     children: JSXElement
@@ -22,6 +24,7 @@ export const RotatingCubeWrapper: Component<RotatingCubeWrapperProps> = (
         y: 0,
     })
     const [velocity, setVelocity] = createSignal({ x: 0, y: 0 })
+    const [showHelperText, setShowHelperText] = createSignal(false)
     let animationFrameId: number
 
     const handleMouseDown = (event: MouseEvent) => {
@@ -105,8 +108,8 @@ export const RotatingCubeWrapper: Component<RotatingCubeWrapperProps> = (
     }
 
     const animateToInitialRotation = () => {
-        const targetRotation = { x: -45, y: 45 }
-        const duration = 3000
+        const targetRotation = { x: -20, y: 30 }
+        const duration = 1000
         const startTime = performance.now()
 
         const animate = (currentTime: number) => {
@@ -129,7 +132,7 @@ export const RotatingCubeWrapper: Component<RotatingCubeWrapperProps> = (
     }
 
     onMount(() => {
-        animateToInitialRotation()
+        setTimeout(() => animateToInitialRotation(), 1000)
     })
 
     onCleanup(() => {
@@ -138,7 +141,7 @@ export const RotatingCubeWrapper: Component<RotatingCubeWrapperProps> = (
 
     return (
         <div
-            class={styles.cubeBody}
+            class={styles.cubeWrapper}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUpOrLeave}

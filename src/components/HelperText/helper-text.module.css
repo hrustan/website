@@ -1,0 +1,24 @@
+@import '../../utils/styles/spacing.module.css';
+@import '../../utils/styles/text.module.css';
+
+.helperText {
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    font-family: 'Indie Flower', cursive;
+    animation: fadeIn 2s ease-in-out forwards;
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

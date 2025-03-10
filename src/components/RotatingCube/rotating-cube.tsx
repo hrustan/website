@@ -1,4 +1,4 @@
-import { createSignal, For, type Component } from 'solid-js'
+import { For, type Component } from 'solid-js'
 import { colorPalette, cubeText, faces } from '../constants/constants'
 import styles from './rotating-cube.module.css'
 
@@ -10,11 +10,6 @@ type RotatingCubeProps = {
 }
 
 export const RotatingCube: Component<RotatingCubeProps> = (props) => {
-    const getRandomColor = (): string => {
-        const randomIndex = Math.floor(Math.random() * colorPalette.length)
-        return colorPalette[randomIndex]
-    }
-
     // Maybe repurpose into some kind of cubeFace text rememberer?
     // Can use memory router for cubeText link
 
@@ -34,7 +29,7 @@ export const RotatingCube: Component<RotatingCubeProps> = (props) => {
                 {(face, index) => (
                     <button
                         class={`${styles.face} ${styles[face]}`}
-                        style={`background: ${getRandomColor()}`}
+                        style={`background: ${colorPalette[index()]}`}
                         onClick={() => handleLinkClick(cubeText[index()])}
                     >
                         {cubeText[index()]}
